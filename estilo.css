@@ -1,0 +1,836 @@
+html{
+  scroll-behavior: smooth;
+}
+/* Alvo para toda a página */
+body::-webkit-scrollbar {
+  width: 18px; /* Largura da barra vertical */
+  height: 12px; /* Altura da barra horizontal */
+}
+
+/* Cor de fundo da barra (trilho) */
+body::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+/* Cor da alça (thumb) que você arrasta */
+body::-webkit-scrollbar-thumb {
+  background-color: #4caf50;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 3px solid #f0f0f0;
+}
+
+/*mudar cor ao passar o mouse */
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #388e3c;
+}
+*{
+  box-sizing: border-box;
+
+}
+body {
+  font-family: 'Kanit', sans-serif;
+  overflow-x: hidden;
+   margin: 0;
+  padding: 0;
+}
+
+/*cabeçalho*/
+.elemento-gradiente {
+  display: block;
+  background: linear-gradient(to left, #13b416, #1ba080);  
+  height: 12px;
+  width: 100%; /* Garante que o gradiente ocupe toda a largura */
+  position: fixed; /* Fixa o gradiente no topo */
+  top: 0; /* Fixa no topo da página */
+  left: 0; /* Alinha à esquerda */
+  z-index: 1111; /* Coloca o gradiente abaixo do cabeçalho */
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 6rem;
+  width: 100%; /* Garantir que ocupe toda a largura da tela */
+  position: fixed; /* Fixa o cabeçalho no topo */
+  top: 0; /* Fixa no topo da página */
+  left: 0; /* Alinha à esquerda */
+  z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+  background-color: white; /* Cor de fundo para o cabeçalho */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+}
+
+.logo-header img{
+  padding-left: 20px;
+}
+#logo-oficial{
+  z-index: -1;
+  width: 20%;
+  cursor: pointer;
+  transition: .5s;
+}
+#logo-oficial:hover{
+ transform: scale(1.1);
+ transition: .5s;
+}
+/* Links de navegação */
+.main {
+  display:inline-flex;
+    gap: 1.5rem; 
+    padding-top: 36px;
+    padding-right: 30px;
+}
+
+.main a {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-size: 20px;
+    transition: 0.4s;
+}
+.main a:hover {
+    color: #ff6300;
+    transition: 0.4s;
+}
+.main a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  top: 30px;
+  width: 80%;
+  height: 3px;
+  background-color: orange;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.main a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Seletor de perfis button */
+.seletor-de-perfis {
+  display: flex;
+  margin-top: -4px;
+}
+
+.seletor-de-perfis button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1.5px solid #015b30;
+  font-size: 20px;
+  background: transparent;
+  border-radius: 15px;
+  height: 40px;
+  color: #015b30;
+  padding: 0.2rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.seletor-de-perfis button:hover {
+  background: #015b30;
+  color: white;
+}
+
+.seletor-de-perfis button .material-symbols-outlined {
+  font-size: 22px; /* tamanho do ícone */
+  display: flex;
+  align-items: center;
+}
+
+.seletor-de-perfis button .text {
+  color: inherit;
+}
+
+
+
+/*principal*/
+
+/*Carrossel*/
+
+/* Container principal do carrossel */
+.slider {
+  margin: 0; /* centraliza horizontalmente */
+  width: 100%; /* largura total do carrossel */
+  height: 700px; /* altura do carrossel */
+  overflow: hidden; /* esconde conteúdo que ultrapassar o tamanho definido */
+  margin: -12px 0px 0px -8px; /* margem externa (topo, direita, inferior, esquerda) */
+}
+
+/* Container que agrupa todos os slides */
+.slides {
+  width: 500%; /* como são 5 slides, ocupa 5 vezes o tamanho do container pai */
+  height: auto;
+  display: flex; /* organiza os slides lado a lado */
+}
+
+/* Esconde os radio buttons que controlam a troca de imagem */
+.slides input {
+  display: none;
+}
+
+/* Estilização de cada slide individual */
+.slide {
+  width: 20%; /* como são 5 slides, cada um ocupa 20% do .slides */
+  position: relative;
+  transition: 0.5s ease-in-out; /* animação suave ao trocar os slides */
+  height: 650px;
+}
+
+/* Faz a imagem dentro do slide ocupar 100% do slide */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ou contain, dependendo do que deseja */
+}
+
+/* Navegação manual (botões clicáveis) */
+.manual-navegação {
+  position: absolute;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  margin: -80px 0px 0px 35rem; /* posiciona os botões manualmente na tela */
+}
+
+/* Botão individual da navegação manual */
+.manual-btn {
+  border: 2px solid #ff6300; /* borda laranja */
+  padding: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s; /* animação ao passar o mouse */
+}
+
+/* Adiciona espaçamento entre os botões, exceto o último */
+.manual-btn:not(:last-child) {
+  margin-right: 1rem;
+}
+
+/* Ao passar o mouse sobre o botão manual, muda o fundo para laranja */
+.manual-btn:hover {
+  background-color: #ff6300;
+}
+
+/* Movimenta os slides de acordo com o radio button selecionado */
+/* Quando o radio-1 está marcado, move para o primeiro slide */
+#radio-1:checked ~ .primeiro { 
+  margin-left: 0;
+}
+
+/* Quando o radio-2 está marcado, move para o segundo slide */
+#radio-2:checked ~ .primeiro { 
+  margin-left: -20%;
+}
+
+/* Terceiro slide */
+#radio-3:checked ~ .primeiro { 
+  margin-left: -40%;
+}
+
+/* Quarto slide 
+#radio-4:checked ~ .primeiro { 
+  margin-left: -60%;
+}
+
+/* Quinto slide 
+#radio-5:checked ~ .primeiro { 
+  margin-left: -80%;
+  }*/
+
+#radio-1:checked ~ .manual-navegação label:nth-child(1),
+#radio-2:checked ~ .manual-navegação label:nth-child(2),
+#radio-3:checked ~ .manual-navegação label:nth-child(3),
+#radio-4:checked ~ .manual-navegação label:nth-child(4),
+#radio-5:checked ~ .manual-navegação label:nth-child(5){
+  background-color: #ff6300;
+}
+
+/* Estilo dos indicadores automáticos do carrossel */
+.navegação-auto div {
+  border: 2px solid #ff6300;
+  padding: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+/* Container da navegação automática (bolinhas que mudam de cor sozinhas) */
+.navegação-auto {
+  width: 800px;
+  margin-top: 48.35rem; /* posiciona verticalmente na tela */
+  margin-left: 35rem; /* posiciona horizontalmente */
+  display: flex;
+  justify-content: center;
+}
+
+/* Espaçamento entre as bolinhas automáticas, exceto a última */
+.navegação-auto div:not(:last-child) {
+  margin-right: 1rem;
+}
+
+/* Destaca a bolinha correspondente ao slide ativo (radio-1 ativo) */
+#radio-1:checked ~ .navegação-auto .auto-btn-1 {
+  background-color: #ff6300;
+}
+
+/* Destaca a bolinha correspondente ao slide ativo (radio-2 ativo) */
+#radio-2:checked ~ .navegação-auto .auto-btn-2 {
+  background-color: #ff6300;
+}
+
+/* Destaca a bolinha correspondente ao slide ativo (radio-3 ativo) */
+#radio-3:checked ~ .navegação-auto .auto-btn-3 {
+  background-color: #ff6300;
+}
+
+/* Destaca a bolinha correspondente ao slide ativo (radio-4 ativo) */
+#radio-4:checked ~ .navegação-auto .auto-btn-4 {
+  background-color: #ff6300;
+}
+
+/* Destaca a bolinha correspondente ao slide ativo (radio-5 ativo) */
+#radio-5:checked ~ .navegação-auto .auto-btn-5 {
+  background-color: #ff6300;
+}
+
+/* --- Estilo Geral --- */
+.section-02 {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fundo com imagem e overlay verde */
+.fundo-secao {
+  position: relative;
+  height: 500px;
+  background: url('Img-section-2/imgmeio.png') center/cover no-repeat;
+}
+
+.overlay-verde {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 128, 0, 0.6);
+  z-index: 1;
+}
+
+/* Conteúdo posicionado acima da imagem e overlay */
+.conteudo-secao {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Título */
+.titulo-secao {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  margin-bottom: 2rem;
+}
+
+.titulo-secao h1 {
+  font-size: 3.5rem;
+}
+
+.titulo-secao h1 span {
+  color: #059751;
+}
+
+/* Carrossel */
+.carrossel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carrossel-livros {
+  display: flex;
+  gap: 25rem;
+  width: max-content;
+  animation: carrossel 25s linear infinite;
+
+
+}
+
+.livro {
+  position: relative;
+  flex-shrink: 0;
+  width: 250px;
+  text-align: center;
+}
+
+.livro img {
+  width: 250px;
+  border-radius: 5px;
+  z-index: 2;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.514) 0px 5px 15px;
+}
+
+/* Número grande ao lado */
+.numero-livro {
+  position: absolute;
+  top: 45%;
+  left: -250px;
+  transform: translateY(-50%);
+  font-size: 30em;
+  color: white;
+  z-index: 1;
+  font-weight: bold;
+}
+
+/* Animação corrigida */
+@keyframes carrossel {
+  100% {
+    translate: calc(-50% - 5px);
+  }
+}
+
+/*Section 3 - recomendados*/
+
+.recomendados {
+  padding: 40px 0;
+  text-align: left;
+}
+
+.titulo-recomendados {
+  padding: 35px;
+}
+
+.recomendados h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.recomendados h2 {
+  color: orange;
+  margin-bottom: 20px;
+  margin-top: -20px;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #fdb813, #ff7200);
+  padding: 20px 0;
+  height: 375px;
+  overflow: hidden;
+  position: relative;
+}
+
+.arrow {
+  background: transparent;
+  color: #ffffff;
+  font-size: 5rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  z-index: 3;
+  transition: .3s;
+}
+.arrow:hover{
+  color: #afafaf;
+  transition: .3s;
+}
+
+.wrapper {
+  position: relative;
+  width: 90%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.group.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  z-index: 2;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+/* Card expandido */
+input[type="radio"]:checked + .card {
+  width: 550px;
+  height: 330px;
+}
+
+/* Sobreposição no card */
+.card {
+  height: 320px;
+  width: 120px;
+  border-radius: 1.5rem;
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #fff;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  transition: .5s;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.51) 0%, rgba(0, 0, 0, 1) 100%);
+  color: white;
+  display: none; /* Inicialmente escondido */
+  padding: 20px;
+  box-sizing: border-box;
+  transition: .5s;
+}
+
+.card .overlay h1 {
+  font-size: 45px;
+}
+.card .overlay h3 {
+  font-size: 25px;
+  margin-top: -10px;
+}
+.card .overlay p {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+
+.card.active .overlay {
+  display: block; /* Exibe o overlay quando o card estiver ativo */
+  transition: .5s;
+}
+/*Section acervo*/
+.Acervo{
+  height: 100vh;
+    background-color: rgb(255, 255, 255);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+ /*DUVIDAS FREQUENTES SECTION*/
+.SOBRE{
+    height: 70vh;
+    background-color: rgb(255, 255, 255);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.TPL{
+    text-align: center;
+    padding: 5px;
+    font-size: 45PX;
+    color: rgb(0, 0, 0);
+  
+}
+.containergerals{
+
+    display: flex;
+    justify-content: center;
+}
+.geralS {
+    width: 80%;
+    font-size: 25px;
+    padding-top: 35px;
+    color: white;
+    ul{
+        list-style: circle;
+        padding-left: 20px;
+        font-size: 20px;
+        color: rgb(182, 181, 181);
+    }
+    p{
+        font-size: 20px;
+        color: rgb(182, 181, 181);
+    }
+    a{
+        color: #bdecb6;
+    }
+    .perguntas-planos{
+        color: #b6c7ec;
+    }
+}
+.geralS p{
+    color: rgb(182, 181, 181);
+}
+details{
+    padding: 10px 20px;
+}
+details {
+    width: 80%;
+    margin: 0 auto ;
+    background: #3c3c3c;
+    margin-bottom: .5rem;
+    
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  summary {
+    cursor: pointer;
+    padding: 1rem;
+    display: block;
+   
+    padding-left: 2.2rem;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  summary:before {
+    content: '';
+    border-width: .4rem;
+    border-style: solid;
+    border-color: transparent transparent transparent #fff;
+    position: absolute;
+    top: 1.8rem;
+    left: 1rem;
+    transform: rotate(0);
+    transform-origin: .2rem 50%;
+    transition: .25s transform ease;
+  }
+  
+  details[open] > summary:before {
+    transform: rotate(90deg);
+  }
+  
+  
+  details > ul {
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+  }
+
+/*footer*/
+footer{
+  align-items: center;
+  justify-content: center;
+  display:flex;
+  gap:16rem;
+  background: linear-gradient(90deg, #14b419, #1aa07b);
+}
+.div-footer{
+  font-size:15px;
+  font-family:"Kanit", sans-serif;
+  padding: 20px;
+  font-weight:bold;
+  color:white;
+}
+.div-footer a{
+  text-decoration: none;
+  color: white;
+}
+.div-footer a:hover{
+  text-decoration: underline;
+}
+.div-footer-footer-horario{
+  text-align: center;
+  font-size:15px;
+  font-family:"Kanit", sans-serif;
+  letter-spacing: 1px;
+  padding-top: 20px;
+  font-weight:bold;
+  color:white;
+  padding-bottom: 20px;
+}
+.logos-footer-estado{
+  height:5rem;
+}
+.logos-footer-escola{
+  height: 5rem;
+}
+.text-copy-footer{
+  font-size: 0.8rem;
+  color: white;
+  margin-top: 1rem;
+  font-family:"Kanit", sans-serif;
+  font-weight:500;
+  text-transform:uppercase;
+}
+
+/* Estilos básicos do menu */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #333;
+  color: black;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Estilo do ícone hambúrguer */
+.menu-hamburguer {
+  display: none; /* escondido no desktop */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-hamburguer .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Responsivo - até 768px */
+@media (max-width: 768px) {
+  .nav-links {
+    top: 60px;
+    right: 0;
+    height: calc(100vh - 60px);
+    background-color: #333;
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .menu-hamburguer {
+    display: flex;
+  }
+}
+
+/* Responsivo - até 500px */
+@media (max-width: 500px) {
+  .header {
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: column;
+    height: auto;
+    gap: 0.5rem;
+    text-align: left;
+  }
+
+  .main {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 0;
+    gap: 0.5rem;
+  }
+
+  .logo-header img {
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+  }
+
+  #logo-oficial {
+    width: 100px;
+  }
+
+  .seletor-de-perfis {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .seletor-de-perfis button {
+    font-size: 16px;
+    padding: 0.3rem 0.8rem;
+  }
+
+  .slides {
+    width: 500%;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slide {
+    width: 20%;
+    flex-shrink: 0;
+    transition: 0.5s ease-in-out;
+    height: 650px;
+  }
+
+  .manual-navegação,
+  .navegação-auto {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+
+  .titulo-secao h1 {
+    font-size: 1.6rem;
+    padding: 0 1rem;
+  }
+
+  .livro {
+    width: 180px;
+  }
+
+  .livro img {
+    max-width: 180px;
+  }
+
+  .carrossel-livros {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    animation: carrossel 25s linear infinite;
+    width: max-content;
+  }
+
+  .carrossel-livros::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .carrossel-livros::-webkit-scrollbar-thumb {
+    background: #4caf50;
+    border-radius: 10px;
+  }
+}
