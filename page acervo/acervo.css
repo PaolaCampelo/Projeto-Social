@@ -1,0 +1,322 @@
+/* 1. RESET DE ESTILOS (para garantir consistência) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 2. ESTILOS GERAIS (afetam a página como um todo) */
+body {
+    background-color: white;
+}
+
+/* 3. HEADER (barra de navegação superior) */
+header {
+    background: linear-gradient(to right, #13b416, #1ba080);
+    height: 25px;
+    width: 100%;
+}
+
+/* 4. CONTAINER PRINCIPAL (estrutura geral de layout) */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+    padding: 10px 5%;
+}
+
+/* 5. SEÇÃO DA PESQUISA (barra de pesquisa) */
+.search-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.search-box {
+    display: flex;
+    width: 60%;
+    max-width: 600px;
+    border: 2px solid #ff8400;
+    border-radius: 10px 10px 2px 2px; /* Bordas arredondadas no topo da barra de pesquisa */
+    margin: 0;
+    background-color: white;
+}
+
+/* Barra de pesquisa */
+#searchInput {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 20px 0 0 20px;
+    background-color: white;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ffa600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 8px 0 0;
+}
+
+/* 6. COMPONENTES DO MENU (logo e links de navegação) */
+.logo-titulo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 15rem;
+}
+
+.titulo {
+    color: rgb(43, 101, 11);
+    font-size: 38px;
+    font-family: sans-serif;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+}
+
+.itens, .item {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 6px 12px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.item {
+    font-size: 18px;
+    border-radius: 110px 110px 110px 110px;
+    border: 1px solid #0bb630;
+}
+
+.user-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #104d0c75;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item:hover {
+    color: rgb(240, 129, 1);
+}
+
+.itens:hover {
+    color: rgb(34, 184, 24);
+}
+
+.itens::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background-color: orange;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.itens:hover::after {
+    transform: scaleX(1);
+}
+
+/* 7. SEÇÃO DE RESULTADOS (tabela de livros) */
+.central-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    width: 100%;
+    gap: 0px;
+    text-align: center;
+}
+
+#resultsContainer {
+    width: 60%;
+    max-width: 600px;
+    margin-top: -2px;
+    padding: 0;
+    border-top: none;
+    border-radius: 2px 2px 20px 20px;
+    overflow-y: auto; /* Adiciona o scrollbar se o conteúdo exceder a altura */
+    max-height: 300px; /* Limita a altura da tabela para mostrar apenas 3 livros */
+    box-sizing: border-box;
+}
+
+
+
+/* Cor do fundo do scrollbar */
+#resultsContainer::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+
+
+}
+
+/* Cor da barrinha do scrollbar */
+#resultsContainer::-webkit-scrollbar-thumb {
+    background: #4CAF50; /* Barrinha verde */
+    border-radius: 10px;
+}
+
+
+#resultsContainer::-webkit-scrollbar-button:vertical:decrement {
+    /* Seta para cima */
+    border-bottom: 70px solid transparent;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #999; /* Cor das setas (cinza claro) */
+    content: "";
+}
+
+#resultsContainer::-webkit-scrollbar-button:vertical:increment {
+    /* Seta para baixo */
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px;
+    border-bottom: 70px solid #999; /* Cor das setas (cinza claro) */
+    content: "";
+}
+
+
+#resultsContainer table {
+    width: 100%;
+    background-color: white;
+    border: 10px solid #ff8400;
+    border-top: none;
+    border-collapse: collapse;
+    text-align: left;
+    border-radius: 0 0 20px 20px;
+}
+
+#resultsContainer th, #resultsContainer td {
+    padding: 10px;
+    border: 2px solid #ff8400;
+    text-align: center;
+}
+
+#resultsContainer th {
+    color: #333;
+}
+
+#resultsContainer th:nth-child(1),
+#resultsContainer th:nth-child(2),
+#resultsContainer th:nth-child(3) {
+    background-color: #fffbcc;
+}
+
+/* 8. ANIMAÇÕES E TRANSIÇÕES (tabela aparecendo e sumindo) */
+.hidden {
+    opacity: 0;
+    transform: translateY(-40px);
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.2s ease, transform 0.2s ease; /* Diminuí o tempo da transição */
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 1000px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.história {
+    color: #ff6a00;
+}
+/*imagem fundo livros*/
+.livros-fundo-img{
+    position:absolute;
+    left:28rem;
+    top:20rem;
+    z-index:-1;
+}
+/* 9. Imagens footer*/
+
+.footer-image {
+  
+    margin-top: 500px;
+    padding: 20px 0;
+}
+
+.footer-image img {
+    max-width: 55px;
+    height: auto;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.footer-image img:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+.dis{
+    font-size: 15px;
+    margin-top: 30px;
+    margin-left: 5px;
+    line-height: 1.4;
+}
+.men{
+    font-size: 15px;
+    margin-top: 15px;
+    margin-left: 5px;
+    line-height: 1.4
+}
+.footer-image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: -55px;
+    padding: 20px;
+   
+    flex-wrap: wrap; /* adapta para telas menores */
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-item img {
+    width: 80px; /* ajuste conforme necessário */
+    height: auto;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.footer-item h1 {
+    font-size: 18px;
+    color: #333;
+}
+.lup, .pec {
+    display: flex;
+    align-items: center; /* alinha verticalmente imagem e texto */
+    gap: 10px; /* espaço entre imagem e texto */
+}
