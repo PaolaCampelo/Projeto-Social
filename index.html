@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="estilo.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--fonte-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Maitree:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/LOGO ESTANTE (V).png">
+  <!--icons-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
+  <title>Estante Viva Aluno</title>
+</head>
+<body> 
+
+  <header>
+  <!--cabeçalho-->
+    <div class="elemento-gradiente"></div>
+
+  <div class="header">
+    <div class="logo-header">
+      <a href="#inicio">
+      <img id="logo-oficial" src="img/LOGO ESTANTE VIVA (V).png" title="Voltar ao inicio">
+      </a>
+    </div>
+
+      <!-- DIV - LINKS DA PÁGINA-->
+      <div class="main">
+        <a href="#titulo-seção2">Populares</a>
+        <a href="#recomendados">Recomendados</a>
+        <a href="page acervo/index.html">Catálogo</a>
+
+      <!-- BUTÃO SELECIONADOR DE PERFIL-->
+      <div class="seletor-de-perfis" title="Seletor de perfil">
+        <button href="#">
+          <span class="material-symbols-outlined">person</span>
+          <span class="text">Aluno</span>
+        </button>
+      </div>
+      
+      </div>              
+  </div>
+</header>
+  <!--principal-->
+  
+    <!--foto-de-fundo-->
+    <br><br><br>
+    <div id="inicio" class="slider">
+
+      <div class="slides">
+        <!--Radio buttons-->
+        <input type="radio" name="radio-btn" id="radio-1">
+        <input type="radio" name="radio-btn" id="radio-2">
+        <input type="radio" name="radio-btn" id="radio-3">
+        <input type="radio" name="radio-btn" id="radio-4">
+        <input type="radio" name="radio-btn" id="radio-5">
+        <!--Fim Radio buttons-->
+
+        <!--Slide imagens-->
+        <div class="primeiro slide "><!--1º Slide-->
+          <img src="img/1.png" alt="Imagem 1">
+        </div>
+        <div class="slide"><!--2º Slide-->
+          <img src="img/2.png" alt="Imagem 2">
+        </div>
+        <!--<div class="slide">
+          <img src="img/3.png" alt="Imagem 3">
+        </div>3º Slide-->
+        <div class="slide"><!--4º Slide-->
+          <img src="img/4.png" alt="Imagem 4">
+        </div>
+        <!--<div class="slide">
+          <img src="img/6.png" alt="Imagem 5">
+        </div>5º Slide-->
+        <!--Fim Slide imagens-->
+
+        <!--Navegação auto-->
+        <div class="navegação-auto">
+          <div class="auto-btn-1"></div>
+          <div class="auto-btn-2"></div>
+          <div class="auto-btn-3"></div>
+          <!--<div class="auto-btn-4"></div>
+          <div class="auto-btn-5"></div>-->
+        </div>
+        <!--Fim Navegação auto-->
+      <!--Navegação manual-->
+      
+      <!--Fim Navegação manual-->
+
+    </div>
+    <div id="titulo-seção2"  class="manual-navegação">
+      <label for="radio-1" class="manual-btn"></label>
+      <label for="radio-2" class="manual-btn"></label>
+      <label for="radio-3" class="manual-btn"></label>
+     <!-- <label for="radio-4" class="manual-btn"></label>
+      <label for="radio-5" class="manual-btn"></label>-->
+    </div>
+    
+  </div>
+      <br><br><br><br><br>
+
+<!-- SEÇÃO DE DESTAQUE DOS LIVROS -->
+
+<section  class="section-02">
+  <div class="titulo-secao">
+    <h1>Top 10 <span>Livros</span> mais buscados</h1>
+  </div>
+
+  <div class="fundo-secao">
+    
+    <div class="overlay-verde"></div>
+
+    <div class="conteudo-secao">
+      
+      <div class="carrossel-container">
+        <div class="carrossel-livros">
+          <!-- Repetir bloco abaixo para cada livro -->
+          <div class="livro">
+            <span class="numero-livro">1</span>
+            <img src="Img-section-2/img1.jpg" alt="O Menino do Pijama Listrado">
+          </div>
+          <div class="livro">
+            <span class="numero-livro">2</span>
+            <img src="Img-section-2/img2.jpg" alt="A Biblioteca da Meia-Noite">
+          </div>
+          <div class="livro">
+            <span class="numero-livro">3</span>
+            <img src="Img-section-2/img3.jpg" alt="A Menina que roubava livros">
+          </div>
+          <div class="livro">
+            <span class="numero-livro">4</span>
+            <img src="Img-section-2/img4.jpg" alt="O morro dos ventos uivantes">
+          </div>
+          <div class="livro">
+            <span class="numero-livro">5</span>
+            <img src="Img-section-2/img5.jpg" alt="É assim que acaba">
+          </div>
+          <div class="livro">
+            <span class="numero-livro">6</span>
+            <img src="Img-section-2/img6.jpg" alt="Os dois morrem no final">
+          </div>
+          <div class="livro">
+            <span class="numero-livro">7</span>
+            <img src="Img-section-2/img7.jpg" alt="The cruel prince">
+          </div>
+          <div class="livro">
+            <span class="numero-livro">8</span>
+            <img src="Img-section-2/img8.jpg" alt="Vermelho branco e sangue azul">
+          </div>
+          <div class="livro">
+            <span class="numero-livro">9</span>
+            <img src="Img-section-2/img9.jpg" alt="A garota no trem">
+          </div>
+          <div class="livro">
+            <span class="numero-livro">10</span>
+            <img src="Img-section-2/img10.jpg" alt="É assim que começa">
+          </div>
+          <!-- ... até o livro 10 -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!--Seção recomendados-->
+<section id="recomendados" class="recomendados"> 
+  <!--TITULO SECTION RECOMENDADOS-->
+  <div class="titulo-recomendados">
+    <h1>Recomendados</h1>
+    <h2>Diversos titulos</h2>
+  </div>
+  <!--DIV GERAL (BARRA COM GRADIENTE)-->
+  <div class="carousel-container">
+    <button class="arrow" id="prevBtn">&lt;</button>
+
+    <div class="wrapper" id="carousel">
+
+      <!-- Grupo 1 -->
+      <div class="group active">
+        <label><input type="radio" name="card" checked>
+          <div class="card" style="background-image: url('img-section-3/livro\ 1.jpg');">
+            <div class="overlay">
+              <h1>A arte da guerra</h1>
+              <h3>Sun tzu</h3>
+              <p>Nesta edição integral e ilustrada, o leitor encontrará os profundos e eficazes ensinamentos de Sun Tzu, ensinamentos que transcendem os limites dos campos de batalha e nos ajudam que a melhor enfrentar e vencer as adversidades tanto do trabalho quanto da vida cotidiana.</p>
+            </div>
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 2.jpg');">
+            <div class="overlay">
+              <h1>O alienista</h1>
+              <h3>Machado de Assis</h3>
+              <p>Em "O Alienista", de Machado de Assis, Simão Bacamarte, um médico psiquiatra, retorna a sua cidade natal, Itaguaí, e instala um hospício, a Casa Verde, com a intenção de estudar a loucura.</p>
+            </div>
+  
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 3.jpg');">
+            <div class="overlay">
+              <h1>Iracema</h1>
+              <h3>José de Alencar</h3>
+              <p>"Iracema" de José de Alencar narra a história de amor entre a índia Iracema e o português Martim, em um contexto de colonização do Ceará.</p>
+            </div>
+        
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 4.jpg');">
+            <div class="overlay">
+              <h1>O Gato Preto</h1>
+              <h3>Edgar Allan Poe</h3>
+              <p>"O Gato Preto", de Edgar Allan Poe, é uma história de terror psicológico onde um homem, inicialmente apaixonado por animais, se transforma em um ser violento e perturbado, principalmente devido ao abuso de álcool. </p>
+            </div>
+           
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 5.jpg');">
+            <div class="overlay">
+              <h1>O Quinze</h1>
+              <h3>Rachel de Queiroz</h3>
+              <p>"O Quinze" de Rachel de Queiroz narra a história de Chico Bento, um vaqueiro, sua família e o relacionamento entre Conceição e Vicente, numa trama que se desenrola durante a seca de 1915 no Nordeste.</p>
+            </div>
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 6.jpg');">
+            <div class="overlay">
+              <h1>O Homem Mais Rico da Babilônia</h1>
+              <h3>George Samuel Clason</h3>
+              <p>As parábolas são ambientadas na antiga Babilônia e trazem ensinamentos sobre assuntos financeiros: Planejamento financeiro, a importância de se poupar, empréstimos, entre outros.</p>
+            </div>
+          </div>
+        </label>
+      </div>
+
+      <!-- Grupo 2 -->
+      <div class="group">
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 7.jpg');">
+            <div class="overlay">
+              <h3>Dom Quixote</h3>
+              <h3>Miguel de Cervantes</h3>
+              <p>Considerado um dos maiores romances da literatura mundial, segue as aventuras de Dom Quixote, um cavaleiro louco que, com seu fiel escudeiro Sancho Pança, busca aventuras e desafios, misturando fantasia e realidade.</p>
+            </div>
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 8.jpg');">
+            <div class="overlay">
+              <h3>Orgulho e Preconceito</h3>
+              <h3>Jane Austen</h3>
+              <p>Uma crítica social disfarçada de romance, onde a protagonista Elizabeth Bennet enfrenta dilemas amorosos com o arrogante, porém encantador, Mr. Darcy. O livro explora temas como classe social, casamento e orgulho.</p>
+            </div>
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 9.jpg');">
+            <div class="overlay">
+              <h3>O Grande Gatsby</h3>
+              <h3>F. Scott Fitzgerald</h3>
+              <p>Situado na década de 1920, o romance aborda temas como o sonho americano, o amor não correspondido e a decadência moral. O protagonista, Jay Gatsby, é um homem rico que tenta reconquistar o amor de Daisy Buchanan.</p>
+            </div>
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 10.jpg');">
+            <div class="overlay">
+              <h3>O Senhor dos Anéis</h3>
+              <h3>J.R.R. Tolkien</h3>
+              <p>Uma épica história de fantasia que segue Frodo Baggins em sua missão de destruir o Um Anel, um artefato mágico poderoso que pode destruir o mundo. A obra explora amizade, sacrifício e a luta contra o mal.</p>
+            </div>
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 11.jpg');">
+            <div class="overlay">
+              <h3>O Hobbit</h3>
+              <h3>J.R.R. Tolkien</h3>
+              <p>Prequela de "O Senhor dos Anéis", segue as aventuras de Bilbo Baggins, um hobbit que se vê envolvido em uma jornada para recuperar um tesouro guardado por um dragão. A história é repleta de magia, mistério e coragem.</p>
+            </div>
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 12.jpg');">
+            <div class="overlay">
+              <h3>Crime e Castigo</h3>
+              <h3>Fyodor Dostoiévski</h3>
+              <p>Este romance psicológico explora a mente de Raskólnikov, um jovem estudante que comete um assassinato. O livro trata de culpa, moralidade e redenção.</p>
+            </div>
+          </div>
+        </label>
+      </div>
+
+      <!-- Grupo 3 -->
+      <div class="group">
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 13.jpg');">
+            <div class="overlay">
+              <h3>A Metamorfose</h3>
+              <h3>Franz Kafka</h3>
+              <p>A história de Gregor Samsa, que acorda transformado em um inseto gigante. A obra explora temas de alienação, identidade e a relação com a família.</p>
+            </div>
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 14.jpg');">
+            <div class="overlay">
+              <h3>Cem Anos de Solidão</h3>
+              <h3>Gabriel García Márquez</h3>
+              <p>Uma obra-prima do realismo mágico, segue a história da família Buendía em Macondo, uma cidade fictícia na Colômbia. O livro mistura o fantástico com o real e explora temas como solidão e destino.</p>
+            </div>
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 15.jpg');">
+            <div class="overlay">
+              <h3>O Processo</h3>
+              <h3>Franz Kafka</h3>
+              <p>Um romance que segue Josef K., um homem acusado de um crime não especificado e levado a um tribunal kafkiano, onde a burocracia e a lógica absurda prevalecem. A obra aborda a alienação e o absurdo da existência humana.</p>
+            </div>
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 16.jpg');">
+            <div class="overlay">
+              <h3>Mataram a Cotovia</h3>
+              <h3>Harper Lee</h3>
+              <p>Um clássico da literatura americana que aborda questões de racismo e justiça no sul dos Estados Unidos, narrado pela jovem Scout Finch. O livro explora a luta pela equidade e o amadurecimento.</p>
+            </div>
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 17.jpeg');">
+            <div class="overlay">
+              <h3>O Sol é Para Todos</h3>
+              <h3>Harper Lee</h3>
+              <p>A história de uma cidade americana no contexto da Grande Depressão, focando na infância de Scout Finch e na defesa de seu pai, o advogado Atticus, que luta para defender um homem negro injustamente acusado de estuprar uma mulher branca.</p>
+            </div>
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 18.jpg');">
+            <div class="overlay">
+              <h3>O Alquimista</h3>
+              <h3>Paulo Coelho</h3>
+              <p>Um conto filosófico sobre Santiago, um jovem pastor que viaja pelo mundo em busca de um tesouro, mas acaba descobrindo uma jornada mais profunda sobre o autoconhecimento e os verdadeiros tesouros da vida.</p>
+            </div>
+          </div>
+        </label>
+      </div>
+
+      <!-- Grupo 4 -->
+      <div class="group">
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 19.jpg');">
+            <div class="overlay">
+              <h3>Frankenstein</h3>
+              <h3>Mary Shelley</h3>
+              <p>A história de Victor Frankenstein, um cientista que cria um monstro a partir de partes de cadáveres. A obra explora temas como a arrogância humana, a criação e as consequências de brincar com a vida.</p>
+            </div>
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 20.jpg');">
+            <div class="overlay">
+              <h3>O Caçador de Pipas</h3>
+              <h3>Khaled Hosseini</h3>
+              <p>Uma história de amizade, culpa e redenção, centrada em Amir e Hassan, dois amigos que crescem no Afeganistão, e o impacto de suas escolhas ao longo das décadas, especialmente no contexto das mudanças políticas e sociais do país.</p>
+            </div>
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 21.jpg');">
+            <div class="overlay">
+              <h3>A Menina que Roubava Livros</h3>
+              <h3>Markus Zusak</h3>
+              <p>Ambientado durante a Segunda Guerra Mundial, narra a história de Liesel Meminger, uma jovem que encontra consolo na leitura durante tempos turbulentos, enquanto a Morte observa o desenrolar de sua vida.</p>
+            </div>
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 22.jpg');">
+            <div class="overlay">
+              <h3>A Insustentável Leveza do Ser</h3>
+              <h3>Milan Kundera</h3>
+              <p>O romance explora a vida de quatro personagens na Tchecoslováquia durante a Primavera de Praga, abordando os dilemas da liberdade, amor, política e as contradições da vida humana.</p>
+            </div>
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 23.jpg');">
+            <div class="overlay">
+              <h3>Beloved</h3>
+              <h3>Toni Morrison</h3>
+              <p>Situado após a Guerra Civil Americana, o romance segue a história de Sethe, uma ex-escrava que vive com sua filha Denver em uma casa assombrada por um espírito. Quando uma misteriosa mulher chamada Beloved aparece, a história se desenrola explorando o trauma da escravidão, os fantasmas do passado e a busca por redenção.</p>
+            </div>
+          </div>
+        </label>
+        <label><input type="radio" name="card">
+          <div class="card" style="background-image: url('img-section-3/livro\ 24.jpg');">
+            <div class="overlay">
+              <h3>A Sombra do Vento</h3>
+              <h3>Carlos Ruiz Zafón</h3>
+              <p>Em Barcelona, após a Guerra Civil Espanhola, o jovem Daniel Sempere descobre um livro misterioso chamado "A Sombra do Vento", de um autor desconhecido. Isso o leva a uma jornada intrigante para desvendar segredos sobre o autor e o seu legado, enquanto confronta o poder da literatura e da memória. A obra é uma mistura de mistério, romance e reflexão sobre o impacto da história nas vidas das pessoas.</p>
+            </div>
+          </div>
+        </label>
+      </div>
+
+    </div>
+    <!--BUTTON SETA-->
+    <button class="arrow" id="nextBtn">&gt;</button>
+  </div>
+</section>
+
+
+<!--Seção 04 - Dúvidas frequentes-->
+
+    <section class="SOBRE" id="geralS">
+        
+        <h1 class="TPL">Dúvidas Frequentes</h1>
+        <Div class="containergerals">
+            <div class="geralS">
+                <details>
+                <summary>Qual é o <b>horário de funcionamento</b> do Multimeios?</summary>
+                   <p>O multimeios funciona de <b>segunda a sexta, das 8h às 18h</b></p>
+                </details>
+                    <details>
+                        <summary>Qual o <b>prazo para devolução</b> dos livros?</summary>
+                            <p>O prazo padrão é de 7 dias corridos. <b>A renovação e feita presencialmente</b>, desde que o livro não esteja reservado por outra pessoa.</p>
+                    </details>
+                        <details>
+                            <summary>Como posso <b>renovar um livro emprestado?</b></summary>
+                                <p>A renovação e <b>feita presencialmente</b> no balcão de atendimento do multimeios, desde que o livro não esteja reservado por outro usuário.</p>
+                        </details>
+            </div>
+        </Div>    
+    </section>
+<br>
+    <!--Rodapé-->
+    <footer>
+      <div class="divs-footer">
+        <h2 class="div-footer footer-endereco">EEEP JOSÉ DE BARCELOS <br> 
+          <a href="https://maps.app.goo.gl/AmXtcWe4ZGThwQgDA">
+          RUA ANGELICA GURGEL, 362 MESSEJANA <br>
+          FORTALEZA, CE <br>
+          </a>
+          CEP: 60871-030
+        </h2>
+      </div>
+
+      <div class="divs-footer">
+        <h2 class="div-footer-footer-horario">HORÁRIO DE FUNCIONAMENTO <br>
+          SEGUNDA A SEXTA <br>
+          07:00 - 16:40
+        </h2>
+          <br>
+        <h2 class="div-footer-footer-horario">CONTATO <br>
+          (85)99999-9999</h2>
+      </div>
+
+      <div class="divs-footer">
+        <img src="img/logo-estado (1).png" class="logos-footer-estado" alt="Logo do Estado do Ceará">
+        <img src="img/logo-escola.png" class="logos-footer-escola">
+
+        <p class="text-copy-footer">&copycopyright 2025 - Multimeios José de Barcelos <br> todos os direitos reservados</p>
+      </div>
+
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
